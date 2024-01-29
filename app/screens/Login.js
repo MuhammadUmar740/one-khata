@@ -26,7 +26,6 @@ function Login(props) {
         style={styles.logo}
         resizeMode="contain"
       />
-      <Text style={styles.loginText}>Login to your existing account.</Text>
       <Form
         initialValues={{
           phone: "",
@@ -71,11 +70,6 @@ const styles = StyleSheet.create({
   logo: {
     height: 150,
     width: "100%",
-  },
-  loginText: {
-    textAlign: "center",
-    fontSize: 20,
-    fontWeight: "500",
   },
 });
 
