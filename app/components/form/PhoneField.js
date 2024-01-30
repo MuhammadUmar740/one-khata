@@ -29,14 +29,14 @@ function PhoneField({ name, placeholder }) {
           <TextField placeholder={placeholder} name={name} />
         </View>
       </View>
-      <CountryPicker
-        show={isCountriesVisible}
+      {isCountriesVisible && <CountryPicker
+        show
         initialState="+92"
         pickerButtonOnPress={(country) => {
           setFieldValue("country", country);
           setCountriesVisibility(false);
         }}
-      />
+      />}
     </>
   );
 }
