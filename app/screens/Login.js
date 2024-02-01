@@ -18,7 +18,7 @@ const validationSchema = Yup.object().shape({
     ),
 });
 
-function Login(props) {
+function Login({ navigation }) {
   return (
     <Screen style={styles.container}>
       <Image
@@ -35,7 +35,12 @@ function Login(props) {
           },
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          console.log(values);
+          if (values) {
+            navigation.navigate("AppNavigation");
+          }
+        }}
       >
         <PhoneField name={"phone"} placeholder={"Enter your phone number"} />
         <View style={styles.button}>
