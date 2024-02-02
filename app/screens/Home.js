@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, ScrollView } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
@@ -7,6 +7,7 @@ import Screen from "../components/Screen";
 import Form from "../components/form/Form";
 import Text from "../components/Text";
 import TextField from "../components/form/TextField";
+import KhataBook from "../components/KhataBook";
 
 function Home(props) {
   return (
@@ -71,27 +72,29 @@ function Home(props) {
         </View>
       </View>
       <View>
-        <Text style={styles.createKhataText}>Manage your customers</Text>
-        <View style={styles.selectKhataOuter}>
-          <View style={styles.allKhataTypesOuter}>
-            <View style={styles.khataTypeOuter}>
-              <MaterialCommunityIcons
-                name="account-plus"
-                size={35}
-                color={colors.primary}
-              />
-              <Text style={styles.khataTypeText}>Add Customer</Text>
-            </View>
-            <View style={styles.khataTypeOuter}>
-              <MaterialCommunityIcons
-                name="account-eye"
-                size={35}
-                color={colors.primary}
-              />
-              <Text style={styles.khataTypeText}>View Customers</Text>
-            </View>
+        <Text style={styles.createKhataText}>Recent Khatas</Text>
+        <ScrollView horizontal>
+          <View style={styles.recentKhatas}>
+            <KhataBook
+              title={"My New Khata"}
+              type={"Tailor"}
+              created_at={"02-FEB-2024"}
+              icon={"scissors-cutting"}
+            />
+            <KhataBook
+              title={"Account Management"}
+              type={"Saloon"}
+              created_at={"20-FEB-2024"}
+              icon={"scissors-cutting"}
+            />
+            <KhataBook
+              title={"Khata 2024"}
+              type={"Accounts"}
+              created_at={"12-JAN-2024"}
+              icon={"account-box"}
+            />
           </View>
-        </View>
+        </ScrollView>
       </View>
     </Screen>
   );
@@ -125,6 +128,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
     width: 50,
+  },
+  recentKhatas: {
+    gap: 15,
+    flexDirection: "row",
   },
   selectKhataOuter: {
     alignItems: "center",
