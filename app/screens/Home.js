@@ -8,6 +8,7 @@ import Form from "../components/form/Form";
 import Text from "../components/Text";
 import TextField from "../components/form/TextField";
 import KhataBook from "../components/KhataBook";
+import ListItem from "../components/ListItem";
 
 function Home(props) {
   return (
@@ -94,6 +95,19 @@ function Home(props) {
               icon={"account-box"}
             />
           </View>
+        </ScrollView>
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text>Recent customers</Text>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+          <ListItem
+            name="Umer Riaz"
+            phoneNumber="+92 301-6254253"
+            imageUrl={require("../assets/user.jpg")}
+          />
+          <ListItem phoneNumber="+92 316-4119059" />
+          <ListItem name="Haris Zahid" phoneNumber="+92 300-6847765" />
+          <ListItem name="Abdullah Shahzad" phoneNumber="+92 300-8846543" />
         </ScrollView>
       </View>
     </Screen>
