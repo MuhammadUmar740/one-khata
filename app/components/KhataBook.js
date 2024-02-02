@@ -16,12 +16,14 @@ function KhataBook({ created_at, icon, title, type, style }) {
             justifyContent: "center",
           }}
         >
-          <MaterialCommunityIcons
-            name={icon}
-            size={35}
-            color={colors.primary}
-          />
-          <Text style={styles.khataBookText}>({type})</Text>
+          <View style={styles.KhataBookType}>
+            <MaterialCommunityIcons
+              name={icon}
+              size={20}
+              color={colors.primary}
+            />
+            <Text style={styles.khataBookText}>({type})</Text>
+          </View>
           <Text style={styles.khataBookText}>{created_at}</Text>
         </View>
       </View>
@@ -45,11 +47,12 @@ const styles = StyleSheet.create({
   khataBookContainer: {
     alignItems: "center",
     backgroundColor: colors.primary,
-    borderRadius: 25,
+    borderRadius: 20,
     gap: 20,
-    padding: 20,
+    padding: 13,
     width: 300,
   },
+  KhataBookType: { gap: 5, flexDirection: "row" },
 });
 
 export default KhataBook;
