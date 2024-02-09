@@ -39,6 +39,7 @@ function AppNavigation() {
     >
       {tabsData.map((tab) => (
         <Tab.Screen
+          key={tab.name}
           name={tab.name}
           component={tab.component}
           options={{
